@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyly's Brew & Bites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="fixed-top-wrapper">
+        <div class="running-text-container">
+            <div class="running-text">
+                ✨ Promo Spesial Akhir Pekan: Diskon 20% untuk semua menu Brew! Gunakan Kode: LYLYBREW20 ☕ nikmati suasana nyaman bersama Lyly's Brew & Bites 🍰 Open Daily: 09.00 AM - 10.00 PM ✨
+            </div>
+        </div>
+
+        <div class="navbar-container">
+            <div class="navbar">
+                <div class="logo">Lyly's Brew & Bites ☕</div>
+                <div class="nav-links">
+                    <button class="nav-btn active" id="btn-nav-home" onclick="showPage('home')">Home</button>
+                    <button class="nav-btn" id="btn-nav-brew" onclick="showPage('brew')">Brew</button>
+                    <button class="nav-btn" id="btn-nav-bites" onclick="showPage('bites')">Bites</button>
+                    <button class="nav-btn" id="btn-nav-cart" onclick="showPage('cart')">Keranjang (<span id="cart-count">0</span>)</button>
+                    <button class="nav-btn" id="auth-nav-btn" onclick="showPage('auth-box')">Login/Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <div id="page-home" class="page active">
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Welcome to<br>Lyly's Brew & Bites</h1>
+                    <p>Sudut ternyaman untuk kamu yang mencari perpaduan sempurna antara seduhan kopi premium dan deretan dessert estetik yang memanjakan mata. Kami percaya setiap cangkir kopi punya cerita tersendiri.</p>
+                    <button class="cta-btn" onclick="showPage('brew')">Jelajahi Menu</button>
+                </div>
+                <div class="hero-image">
+                    <img src="pict1.jpeg" alt="Cafe shop">
+                </div>
+            </div>
+        </div>
+
+        <div id="page-brew" class="page">
+            <h2 class="menu-title">Our Premium Brews</h2>
+            <div class="grid-products">
+			
+                <div class="card">
+                    <img src="Americano.jpeg" alt="Americano">
+                    <div class="card-info">
+                        <h3>Americano</h3>
+                        <p>Espresso ganda yang dipadukan dengan air panas.</p>
+                         <div class="variant-select">
+							<label for="variant-americano-1">Pilihan:</label>
+							<select id="variant-americano-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 15.000</span>
+							<button class="add-btn" onclick="addWithVariant('Americano', 15000, 'variant-americano-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>
+		
+                <div class="card">
+                    <img src="Espresso.jpeg" alt="Espresso">
+                    <div class="card-info">
+                        <h3>Espresso</h3>
+                        <p>Ekstraksi murni dari biji kopi pilihan dengan cream yang tebal.</p>
+                         <div class="variant-select">
+							<label for="variant-espresso-1">Pilihan:</label>
+							<select id="variant-espresso-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 18.000</span>
+							<button class="add-btn" onclick="addWithVariant('Espresso', 18000, 'variant-espresso-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="card">
+                    <img src="Macchiato.jpeg" alt="Macchiato">
+                    <div class="card-info">
+                        <h3>Macchiato</h3>
+                        <p>Espresso ganda dengan sedikit sentuhan steamed milk foam di atasnya.</p>
+                         <div class="variant-select">
+							<label for="variant-macchiato-1">Pilihan:</label>
+							<select id="variant-macchiato-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 20.000</span>
+							<button class="add-btn" onclick="addWithVariant('Macchiato', 20000, 'variant-macchiato-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="card">
+                    <img src="Piccolo.jpeg" alt="Piccolo">
+                    <div class="card-info">
+                        <h3>Piccolo</h3>
+                        <p>Ristretto intens yang disajikan bersama susu hangat.</p>
+                         <div class="variant-select">
+							<label for="variant-piccolo-1">Pilihan:</label>
+							<select id="variant-piccolo-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 22.000</span>
+							<button class="add-btn" onclick="addWithVariant('Piccolo', 20000, 'variant-piccolo-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="card">
+                    <img src="FlatWhite.jpeg" alt="Flat White">
+                    <div class="card-info">
+                        <h3>Flat White</h3>
+                        <p>Espresso dengan lapisan velvety steamed milk yang tipis.</p>
+                         <div class="variant-select">
+							<label for="variant-flatwhite-1">Pilihan:</label>
+							<select id="variant-flatwhite-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 20.000</span>
+							<button class="add-btn" onclick="addWithVariant('FlatWhite', 20000, 'variant-flatwhite-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="card">
+                    <img src="Cappucino.jpeg" alt="Cappucino">
+                    <div class="card-info">
+                        <h3>Cappucino</h3>
+                        <p>Espresso dengan lapisan foam susu yang tebal dan tekstur yang lebih airy.</p>
+                         <div class="variant-select">
+							<label for="variant-cappucino-1">Pilihan:</label>
+							<select id="variant-cappucino-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 17.000</span>
+							<button class="add-btn" onclick="addWithVariant('Cappucino', 17000, 'variant-cappucino-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class="card">
+                    <img src="latte.jpeg" alt="Caffe Latte">
+                    <div class="card-info">
+                        <h3>Caffe Latte</h3>
+                        <p>Perpaduan klasik antara espresso intens dengan kelembutan susu cair yang di-steam sempurna.</p>
+                         <div class="variant-select">
+							<label for="variant-caffelatte-1">Pilihan:</label>
+							<select id="variant-caffelatte-1" class="coffee-variant">
+							<option value="Hot">Hot</option>
+							<option value="Ice">Ice</option>
+							</select>
+						</div>
+						<div class="card-bottom">
+							<span class="class">Rp 18.000</span>
+							<button class="add-btn" onclick="addWithVariant('Caffelatte', 18000, 'variant-caffelatte-1')">+ Tambah</button>
+						</div>
+					</div>
+				</div>	
+            </div>
+        </div>
+
+        <div id="page-bites" class="page">
+            <h2 class="menu-title">Signature Dessert & Bites</h2>
+            <div class="grid-products">
+			
+                <div class="card">
+                    <img src="Buttercroisant.jpeg" alt="Butter Croisant">
+                    <div class="card-info">
+                        <h3>Butter Croisant</h3>
+                        <p>Pastry klasik Prancis yang memiliki aroma butter serta renyah di luar dan lembut di dalam.</p>
+                        <div class="card-bottom">
+                            <span class="price">Rp 25.000</span>
+                            <button class="add-btn" onclick="addToCart('Butter Croisant', 25000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="card">
+                    <img src="Fudgybrownies.jpeg" alt="Fudgy Brownie">
+                    <div class="card-info">
+                        <h3>Fudgy Brownie</h3>
+                        <p>Brownie cokelat pekat dengan tekstur bagian dalam yang padat dan lembut.</p>
+                        <div class="card-bottom">
+                            <span class="price">Rp 5.000</span>
+                            <button class="add-btn" onclick="addToCart('Fudgy Brownie', 5000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="card">
+                    <img src="Softcookies.jpeg" alt="Soft Cookies">
+                    <div class="card-info">
+                        <h3>Soft Cookies</h3>
+                        <p>Kue kering panggang yang lembut di tengah dengan limpahan potongan cokelat yang meleleh di setiap gigitan.</p>
+                        <div class="card-bottom">
+                            <span class="price">Rp 10.000</span>
+                            <button class="add-btn" onclick="addToCart('Softcookies', 10000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="card">
+                    <img src="Mochi.jpeg" alt="Mochi">
+                    <div class="card-info">
+                        <h3>Daifuku Mochi</h3>
+                        <p>Kue mochi khas Jepang yang sangat kenyal dan lembut, dengan isian pasta kacang merah manis yang padat serta buah stroberi segar utuh di dalamnya.</p>
+                        <div class="card-bottom">
+                            <span class="price">Rp 7.000</span>
+                            <button class="add-btn" onclick="addToCart('Mochi', 7000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="card">
+                    <img src="Jigglypuding.jpeg" alt="Jiggly Pudding">
+                    <div class="card-info">
+                        <h3>Jiggly Pudding</h3>
+                        <p>Puding susu lembut  dengan tekstur sangat elastis (jiggly).</p>
+                        <div class="card-bottom">
+                            <span class="price">Rp 10.000</span>
+                            <button class="add-btn" onclick="addToCart('Jiggly Pudding', 10000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>		
+            </div>
+        </div>
+
+        <div id="page-cart" class="page">
+            <h2 class="menu-title">Keranjang Belanja Anda</h2>
+            <div class="cart-container">
+                <div id="cart-list">
+                    <p style="color:#6d594f; text-align:center;">Keranjang Anda masih kosong.</p>
+                </div>
+                <div id="cart-total" style="margin-top:20px; font-weight:600; text-align:right; font-size:18px; display:none;">
+                    Total: <span id="total-price">Rp 0</span>
+                </div>
+                <button class="checkout-btn" id="checkout-btn" style="display:none;" onclick="checkout()">Checkout Sekarang</button>
+            </div>
+        </div>
+
+        <div id="page-auth-box" class="page">
+            <div class="auth-wrapper">
+                <div class="auth-side-img"></div>
+                <div class="auth-form-side">
+                    
+                    <div id="box-login">
+                        <h2>Login Member</h2>
+                        <div class="input-group">
+                            <label for="login-username">Username</label>
+                            <input type="text" id="login-username" placeholder="Masukkan username anda">
+                        </div>
+                        <div class="input-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="Masukkan password anda">
+                        </div>
+                        <button class="auth-btn" onclick="loginAction()">Masuk</button>
+                        <p class="switch-text">Belum punya akun? <a href="#" onclick="toggleAuthForm('register')">Daftar/Register dulu</a></p>
+                    </div>
+
+                    <div id="box-register" style="display: none;">
+                        <h2>Buat Akun Baru</h2>
+                        <div class="input-group">
+                            <label for="reg-name">Nama Lengkap</label>
+                            <input type="text" id="reg-name" placeholder="Masukkan nama lengkap">
+                        </div>
+                        <div class="input-group">
+                            <label for="reg-username">Username Baru</label>
+                            <input type="text" id="reg-username" placeholder="Buat username unik">
+                        </div>
+                        <div class="input-group">
+                            <label for="reg-password">Password</label>
+                            <input type="password" id="reg-password" placeholder="Buat password aman">
+                        </div>
+                        <button class="auth-btn" onclick="registerAction()">Daftar Sekarang</button>
+                        <p class="switch-text">Sudah punya akun? <a href="#" onclick="toggleAuthForm('login')">Login di sini</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+	<audio id="bgMusic" autoplay loop>
+    <source src="Vintage.mp3" type="audio/mpeg">
+	</audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
