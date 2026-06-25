@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lyly's Brew & Bites</title>
+    <!-- Hubungkan Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  
     <div class="fixed-top-wrapper">
+        <!-- 1. TULISAN BERGERAK (MARQUEE) -->
         <div class="running-text-container">
             <div class="running-text">
                 ✨ Promo Spesial Akhir Pekan: Diskon 20% untuk semua menu Brew! Gunakan Kode: LYLYBREW20 ☕ nikmati suasana nyaman bersama Lyly's Brew & Bites 🍰 Open Daily: 09.00 AM - 10.00 PM ✨
             </div>
         </div>
 
+        <!-- 2. NAVBAR -->
         <div class="navbar-container">
             <div class="navbar">
                 <div class="logo">Lyly's Brew & Bites ☕</div>
@@ -24,6 +28,7 @@
                     <button class="nav-btn" id="btn-nav-brew" onclick="showPage('brew')">Brew</button>
                     <button class="nav-btn" id="btn-nav-bites" onclick="showPage('bites')">Bites</button>
                     <button class="nav-btn" id="btn-nav-cart" onclick="showPage('cart')">Keranjang (<span id="cart-count">0</span>)</button>
+                    <button class="nav-btn" id="btn-nav-about" onclick="showPage('about')">Tentang Kami</button>
                     <button class="nav-btn" id="auth-nav-btn" onclick="showPage('auth-box')">Login/Register</button>
                 </div>
             </div>
@@ -40,7 +45,7 @@
                     <button class="cta-btn" onclick="showPage('brew')">Jelajahi Menu</button>
                 </div>
                 <div class="hero-image">
-                    <img src="pict1.jpeg" alt="Cafe shop">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop" alt="Cafe Banner">
                 </div>
             </div>
         </div>
@@ -48,9 +53,8 @@
         <div id="page-brew" class="page">
             <h2 class="menu-title">Our Premium Brews</h2>
             <div class="grid-products">
-			
                 <div class="card">
-                    <img src="Americano.jpeg" alt="Americano">
+                     <img src="Americano.jpeg" alt="Americano">
                     <div class="card-info">
                         <h3>Americano</h3>
                         <p>Espresso ganda yang dipadukan dengan air panas.</p>
@@ -264,11 +268,47 @@
             </div>
         </div>
 
+        <div id="page-about" class="page">
+            <h2 class="menu-title">Tentang Lyly's Brew & Bites</h2>
+            <div class="about-container">
+                <div class="about-video-section">
+                    <h3>Intip Suasana Kafe Kami</h3>
+                    <div class="video-wrapper">
+                       
+                        <video width="100%" controls autoplay muted loop playsinline style="width: 100%; height: 100%;">
+                            <source src="https://youtu.be/0jIeCAOkgcQ?si=FIS6xBn37OEf9DiN" type="video/mp4">
+                        </video>
+                    </div>
+                    <p class="video-desc">Dibuat khusus sebagai ruang komunal yang hangat, kami mengombinasikan aroma biji kopi pilihan dengan kenyamanan rumah. Tempat terbaik untuk produktivitas maupun sekadar melepas penat.</p>
+                </div>
+
+                <div class="about-contact-section">
+                    <h3>Hubungi & Kunjungi Kami</h3>
+                    <div class="contact-grid">
+                        <div class="contact-card">
+                            <span class="contact-icon">📞</span>
+                            <h4>WhatsApp</h4>
+                            <p>+62 852-9017-8089</p>
+                        </div>
+                        <div class="contact-card">
+                            <span class="contact-icon">📸</span>
+                            <h4>Instagram</h4>
+                            <p>@lylys.brewbites</p>
+                        </div>
+                        <div class="contact-card">
+                            <span class="contact-icon">✉️</span>
+                            <h4>Email</h4>
+                            <p>halo@lylysbrewbites.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="page-auth-box" class="page">
             <div class="auth-wrapper">
                 <div class="auth-side-img"></div>
                 <div class="auth-form-side">
-                    
                     <div id="box-login">
                         <h2>Login Member</h2>
                         <div class="input-group">
@@ -300,17 +340,11 @@
                         <button class="auth-btn" onclick="registerAction()">Daftar Sekarang</button>
                         <p class="switch-text">Sudah punya akun? <a href="#" onclick="toggleAuthForm('login')">Login di sini</a></p>
                     </div>
-
                 </div>
             </div>
-        </div>
-
+		</div>
     </main>
-	<audio id="bgMusic" autoplay loop>
-    <source src="Vintage.mp3" type="audio/mpeg">
-	</audio>
-
+	
     <script src="script.js"></script>
 </body>
 </html>
-
