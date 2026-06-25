@@ -4,6 +4,7 @@ let cart = [];
 let registeredUser = "admin";
 let registeredPass = "admin123";
 
+
 function showPage(pageId) {
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
@@ -16,7 +17,6 @@ function showPage(pageId) {
     const buttons = document.querySelectorAll('.nav-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
     
-    
     if(window.event && window.event.target && window.event.target.classList.contains('nav-btn')) {
         window.event.target.classList.add('active');
     } else {
@@ -25,14 +25,13 @@ function showPage(pageId) {
         if (pageId === 'bites') document.getElementById('btn-nav-bites').classList.add('active');
         if (pageId === 'cart') document.getElementById('btn-nav-cart').classList.add('active');
         if (pageId === 'home') document.getElementById('btn-nav-home').classList.add('active');
+        if (pageId === 'about') document.getElementById('btn-nav-about').classList.add('active');
     }
 }
-
 
 function toggleAuthForm(target) {
     const loginBox = document.getElementById('box-login');
     const registerBox = document.getElementById('box-register');
-
     if(target === 'register') {
         loginBox.style.display = 'none';
         registerBox.style.display = 'block';
@@ -41,7 +40,6 @@ function toggleAuthForm(target) {
         registerBox.style.display = 'none';
     }
 }
-
 
 function registerAction() {
     const name = document.getElementById('reg-name').value;
@@ -72,7 +70,6 @@ function loginAction() {
     }
 }
 
-
 function addToCart(name, price) {
     cart.push({ name: name, price: price });
     updateCartUI();
@@ -81,7 +78,6 @@ function addToCart(name, price) {
 
 function updateCartUI() {
     document.getElementById('cart-count').innerText = cart.length;
-
     const cartList = document.getElementById('cart-list');
     const cartTotal = document.getElementById('cart-total');
     const checkoutBtn = document.getElementById('checkout-btn');
@@ -110,29 +106,14 @@ function updateCartUI() {
     checkoutBtn.style.display = 'block';
 }
 
-
 function checkout() {
     if (!isLoggedIn) {
         alert('Akses Ditolak: Anda harus Login atau Register terlebih dahulu sebelum melakukan transaksi checkout!');
         showPage('auth-box'); 
         return;
     }
-
     alert('Terima kasih telah memesan di Lyly\'s Brew & Bites! Pesanan Anda sedang diproses.');
     cart = [];
     updateCartUI();
     showPage('home');
 }
-
-function putarLagu() {
-     var audio = document.getElementById('bgMusic');
-     if (audio && audio.paused) {
-            audio.play().catch(function(error) {
-                console.log("Autoplay diblokir, butuh klik dari user.");
-            });
-        }
-    }
-    window.addEventListener('click', putarLagu, { once: true });
-    window.addEventListener('scroll', putarLagu, { once: true });
-    window.addEventListener('keydown', putarLagu, { once: true });
-
